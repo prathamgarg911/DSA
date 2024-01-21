@@ -11,8 +11,6 @@ public:
         return "";
     }
     string longestCommonPrefix(vector<string>& strs) {
-
-        map <string,int> str;
         string check = strs[0];
         int str_min = INT_MAX;
         for(int i = 0;i < strs.size();i++){
