@@ -1,9 +1,24 @@
 class Solution {
 public:
+
+    string Compare(string a , string b)
+    {
+        int len = min(a.size(),b.size());
+
+        for(int win_size=len ;win_size>=0;win_size--)
+        {
+            if(a.substr(0,win_size) == b.substr(0,win_size) )
+            return a.substr(0,win_size);
+  
+        }
+
+        return "";
+    }
+
     string longestCommonPrefix(vector<string>& strs) {
 
         map <string,int> str;
-
+        string check = strs[0];
         int str_min = INT_MAX;
 
         for(int i = 0;i < strs.size();i++){
@@ -12,28 +27,11 @@ public:
             }
         }
 
-        for(int window = str_min; window >= 0;window--){
-            str[strs[0].substr(0,window)]++;
-
-            cout<<strs[0].substr(0,window)<<endl;
-
-            for(int p = 1; p < strs.size();p++){
-                if(str[strs[p].substr(0,window)] == 0){
-                    break;
-                }
-                else{
-                    str[strs[p].substr(0,window)]++;
-                }
-            }
-
-            if(str[strs[0].substr(0,window)] == strs.size()){
-                return strs[0].substr(0,window);
-            }
-            str.clear();
-
+        for(int i = 1;i < strs.size();i++){
+            check = Compare(check,strs[i].substr(0,str_min));
         }
 
-        return "";
+        return check;
 
         
     }
