@@ -12,7 +12,7 @@ public:
     }
     string longestCommonPrefix(vector<string>& strs) {
         string check = strs[0];
-        int str_min = 201;
+        int str_min = INT_MAX;
         for(int i = 0;i < strs.size();i++){
             if(strs[i].size() < str_min){
                 str_min = strs[i].size();
@@ -22,7 +22,5 @@ public:
             check = Compare(check,strs[i].substr(0,str_min));
         }
         return check;
-
-        
     }
 };
