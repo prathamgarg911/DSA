@@ -1,10 +1,8 @@
 class Solution {
 public:
-
     string Compare(string a , string b)
     {
         int len = min(a.size(),b.size());
-
         for(int win_size=len ;win_size>=0;win_size--)
         {
             if(a.substr(0,win_size) == b.substr(0,win_size) )
@@ -12,7 +10,6 @@ public:
         }
         return "";
     }
-
     string longestCommonPrefix(vector<string>& strs) {
 
         map <string,int> str;
