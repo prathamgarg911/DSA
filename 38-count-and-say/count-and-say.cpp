@@ -1,10 +1,5 @@
 class Solution {
 public:
-    string getString(char x)
-{
-    string s(1, x);
-    return s;   
-}
     string solve(string s)
     {
         string ans = "";
