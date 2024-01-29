@@ -18,7 +18,7 @@ public:
             }
             else if (s[i]!=s[i+1])
             {
-             ans = ans + to_string(sum) +  getString(s[i]); 
+             ans = ans + to_string(sum) +  s[i]; 
              sum=1;
             }   
         }
