@@ -18,9 +18,11 @@ public:
     string countAndSay(int n) 
     {
         string s = "1";
-        for(int i =0 ; i<n-1 ; i++)
+        int i = 1;
+        while(i<n)
         {
             s = solve(s);
+            i++;
         }
         return s;
     }
