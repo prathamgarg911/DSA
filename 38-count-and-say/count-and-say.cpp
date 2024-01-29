@@ -4,7 +4,6 @@ public:
     {
         string ans = "";
         int n  = s.length(),sum=1;
-        cout<<s<<endl;
         for(int i=0;i<n;i++)
         {   
             if(s[i]==s[i+1])
